@@ -7,6 +7,8 @@ Scrape data from airport departures
 
 `bin/run`
 
+Copy paste content from `config/crontab.conf` to your crontab
+
 ## More
 
 Run `bin/run --help` to get more information

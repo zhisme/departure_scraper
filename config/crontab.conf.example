@@ -1,0 +1,6 @@
+# Actually you need to run echo $PATH and copy everything to this variable
+PATH=$PATH
+SHELL=/bin/bash
+
+# replace paths
+0 * * * * (cd /home/departure_scraper && /bin/bash -lc '/home/.rbenv/shims/ruby bin/run')
