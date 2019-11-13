@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'departure_scraper'
+require 'optparse'
+Dir['./config/**/*.rb'].each { |file| require file }
+Dir['./lib/**/*.rb'].each { |file| require file }
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = 'Usage: bin/run [options]'
+
+  opts.on('-v', '--[no-]verbose', 'Run verbosely') do |v|
+    options[:verbose] = v
+  end
+
+  opts.on('-r', '--[no-]rerun', 'Rerun of program without outside scrape request') do |r|
+    options[:rerun] = r
+  end
+
+  opts.on('-p', '--provider PROVIDER', 'Provider name to scrape from. Defaults to vieannaairport') do |provider|
+    options[:provider] = provider
+  end
+
+  opts.on('-h', '--help', 'Prints this help') do
+    puts opts
+    exit
+  end
+end.parse!
+
+DepartureScraper.run(options)
