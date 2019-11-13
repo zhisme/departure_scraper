@@ -15,8 +15,9 @@ Run `bin/run --help` to get more information
 
 ## Testing
 
-ENV=test bundle exec rake db:create db:migrate
-ENV=test bundle exec rspec
+`ENV=test bundle exec rake db:create db:migrate`
+
+`ENV=test bundle exec rspec`
 
 ## Task
 
