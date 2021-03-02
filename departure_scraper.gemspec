@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activerecord', '~> 5.2.3'
+  spec.add_dependency 'activerecord', '>= 5.2.3', '< 6.2.0'
   spec.add_dependency 'capybara', '~> 3.11'
   spec.add_dependency 'dalli', '~> 2.7.10'
   spec.add_dependency 'database_cleaner', '~> 1.7'
